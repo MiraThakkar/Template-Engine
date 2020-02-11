@@ -15,11 +15,11 @@ function promptTeamInfo (){
       .prompt([
         {
             name: "name", 
-            message: "Enter your name: ",
+            message: "Enter the Employee's name: ",
             type: "input",
             validate: (input) => {
                 if(input === ""){
-                    return "Employee name is required"
+                    return "Employee name is required."
                 }
                 return true;
             }
@@ -28,35 +28,35 @@ function promptTeamInfo (){
     
         {   
             name: "id",
-            message: "Enter your id: ",
+            message: "Enter the Employee's id: ",
             type: "input",
   
         },
 
         {
             name: "email",
-            message: "Enter your email: ",
+            message: "Enter the Employee's email: ",
             type: "input",
             validate: (input) => {
                 if(input === ""){
-                    return "A valid is required"
+                    return "A valid email is required."
                 }
                 return true;
             }
         },
         {
-            message: "Enter your role: ",
+            message: "Enter the Employee's role: ",
             name: "role"
             
         },
         {
-            message: "Enter office number: ",
+            message: "Enter the Manager's office number: ",
             name: "office",
             when: (answers) => (answers.role).toLowerCase() === "manager"
 
         },
         {
-            message: "Enter school",
+            message: "Enter the Intern's school: ",
             name: "school",
             when: (answers) => (answers.role).toLowerCase() === "intern"
 
@@ -65,7 +65,7 @@ function promptTeamInfo (){
         {
             
             name: "github",
-            message: "Enter github username",
+            message: "Enter the Engineer's github username: ",
             type: "input",
             validate: (input) => {
                 if(input === ""){
@@ -90,6 +90,7 @@ function promptTeamInfo (){
 async function employeeInfo (){
     var moreEmployees = "yes";
     fs.copyFileSync('./templates/main.html', './output.html');
+    console.log("Let's build your team! Output will be saved in output.html")
 
     while (moreEmployees != "no") {
         const answers = await promptTeamInfo();
@@ -138,7 +139,7 @@ async function createEmployeeCard (employeeInfo, more) {
                     if(err) {
                         throw err;
                     } else {
-                     console.log("Team Roster Created in the output.html, please check");
+                     console.log("Team roster created and saved in the output.html, please check!!");
                     }
                 })
             }
