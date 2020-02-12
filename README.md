@@ -14,6 +14,7 @@ so that I have quick access to emails and GitHub profiles
 
 ![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
 ![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
+![](team-roster.gif)
 
 
 * The app has used Manager, Engineer, Intern subclasses which extend to the super class Employee to create instance of the class based on employee's role
@@ -31,4 +32,4 @@ so that I have quick access to emails and GitHub profiles
 
 The updated cards are then rendenred into output.html file
 
-![](Team Roster.gif)
+
