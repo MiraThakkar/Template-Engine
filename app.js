@@ -118,6 +118,8 @@ async function employeeInfo (){
     }    
 }
 
+//this function reads the templates, updates the employees informatin and renders cards in "output.html"
+
 async function createEmployeeCard (employeeInfo, more) {
     var employeeRole = (employeeInfo.title).toLowerCase();
     var fileName = "./templates/" + employeeRole + ".html";
@@ -133,7 +135,7 @@ async function createEmployeeCard (employeeInfo, more) {
             if(err) {
                 throw err
             } else if(more == "no"){
-                //appendfooter
+                //appendfooter if no more employees to add
                 var footerhtml = "</div></div></body></html>";
                 fs.appendFile('./output.html', footerhtml, function(err){
                     if(err) {
